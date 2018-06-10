@@ -6,6 +6,9 @@
   "contributors": [
     {
       "name": "Edgar Hipp"
+    },
+    {
+      "name": "Jérôme Landieth"
     }
   ],
   "main": "js/docxtemplater.js",
@@ -17,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/open-xml-templating/docxtemplater"
+    "url": "https://github.com/Landeers/docxtemplater"
   },
   "dependencies": {
     "xmldom": "^0.1.27"
@@ -36,7 +39,7 @@
     "eslint-plugin-dependencies": "^2.4.0",
     "eslint_d": "^5.3.1",
     "finalhandler": "^1.1.1",
-    "jszip": "^2.6.1",
+    "jszip": "^3.1.5",
     "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",
     "mocha": "^5.2.0",
@@ -52,12 +55,13 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=0.10"
+    "node": ">=8.11.1"
   },
   "scripts": {
+    "build": "rimraf build && mkdirp build && npm run browserify && npm run uglify",
     "generate:doc": "cd docs; rm build/ -rf ; make html",
     "profile": "./profile.bash",
-    "preversion": "npm run test:es6 && npm run lint && npm run prettier && npm test && rimraf build && mkdirp build && npm run browserify && npm run uglify && npm run verifypublishsize && npm run test:browser",
+    "preversion": "npm run test:es6 && npm run lint && npm run prettier && npm test && npm run build && npm run verifypublishsize && npm run test:browser",
     "check-casing": "./check-casing.bash",
     "compile": "npm run convertto:es5",
     "browserify:test": "FILE=test webpack",
@@ -68,7 +72,7 @@
     "convertto:es5": "rimraf js -rf && mkdirp js && npm run babel && cp es6/tests/*.xml js/tests ",
     "convertto:es5:watch": "npm run babel -- --watch",
     "test:coverage": "nyc --reporter=html --reporter=text mocha --  es6/tests/index.js",
-    "prettier": "prettier --list-different 'es6/**/!(filenames).js' '*.js'",
+    "prettier": "prettier --list-different 'es6/**/*.js' --debug-check",
     "prettier:fix": "prettier --write 'es6/**/!(filenames).js' '*.js'",
     "lint": "eslint_d . && ./check-casing.bash",
     "lint:fix": "eslint_d . --fix && ./check-casing.bash",

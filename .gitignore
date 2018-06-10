@@ -5,7 +5,6 @@
 .idea
 /*.docx
 /*.pptx
-/build
 /docs/build
 /js
 /output.docx
