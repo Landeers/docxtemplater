@@ -6,7 +6,7 @@ interface XmlTemplater {
   getFullText(): string;
 }
 
-interface Docxtemplater {
+declare class Docxtemplater {
   setModules(obj: object): void;
 
   sendEvent(eventName: string): void;
@@ -42,16 +42,10 @@ interface Docxtemplater {
   getTemplatedFiles(): Array<string>;
 }
 
-
 // Docxtemplater.DocUtils = DocUtils;
 // Docxtemplater.Errors = require("./errors");
 // Docxtemplater.XmlTemplater = require("./xml-templater");
 // Docxtemplater.FileTypeConfig = require("./file-type-config");
 // Docxtemplater.XmlMatcher = require("./xml-matcher");
-
-
-export function loadZip(zip)
-
-declare var Docxtemplater: Docxtemplater;
 
 export = Docxtemplater;
