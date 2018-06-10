@@ -58,8 +58,8 @@
     "node": ">=8.11.1"
   },
   "scripts": {
-    "build": "rimraf build && mkdirp build && npm run browserify && npm run uglify",
-    "generate:doc": "cd docs; rm build/ -rf ; make html",
+    "build": "rimraf dist && mkdirp dist && npm run browserify && npm run uglify",
+    "generate:doc": "cd docs; rm dist/ -rf ; make html",
     "profile": "./profile.bash",
     "preversion": "npm run test:es6 && npm run lint && npm run prettier && npm test && npm run build && npm run verifypublishsize && npm run test:browser",
     "check-casing": "./check-casing.bash",

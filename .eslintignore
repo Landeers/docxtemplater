@@ -25,4 +25,5 @@ js/
 test/
 coverage/
 prof/
+dist/
 .git
