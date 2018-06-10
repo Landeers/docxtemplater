@@ -11,7 +11,7 @@
       "name": "Jérôme Landieth"
     }
   ],
-  "main": "js/docxtemplater.js",
+  "main": "dist/docxtemplater.js",
   "keywords": [
     "docx",
     "templates",

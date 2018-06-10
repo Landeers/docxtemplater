@@ -2,13 +2,51 @@
 // TypeScript Version: 2.2
 import * as JSZip from 'jszip';
 
-interface InspectModule {}
+declare interface InspectModule {}
 
-interface XmlTemplater {
+declare interface XmlTemplater {
   getFullText(): string;
 }
 
+declare interface DocUtils {
+  isContent();
+  isParagraphStart();
+  isParagraphEnd();
+  isTagStart();
+  isTagEnd();
+  isTextStart();
+  isTextEnd();
+  unique();
+  chunkBy();
+  last();
+  mergeObjects();
+  xml2str();
+  str2xml();
+  getRight();
+  getLeft();
+  pregMatchAll();
+  convertSpaces();
+  escapeRegExp();
+  charMapRegexes();
+  hasCorruptCharacters();
+  defaults();
+  wordToUtf8();
+  utf8ToWord();
+  concatArrays();
+  charMap();
+}
+
+declare namespace Docxtemplater {
+  // Docxtemplater.DocUtils = DocUtils;
+  // Docxtemplater.Errors = require("./errors");
+  // Docxtemplater.XmlTemplater = require("./xml-templater");
+  // Docxtemplater.FileTypeConfig = require("./file-type-config");
+  // Docxtemplater.XmlMatcher = require("./xml-matcher");
+}
+
 declare class Docxtemplater {
+  constructor();
+
   setModules(obj: object): void;
 
   sendEvent(eventName: string): void;
@@ -43,11 +81,5 @@ declare class Docxtemplater {
 
   getTemplatedFiles(): Array<string>;
 }
-
-// Docxtemplater.DocUtils = DocUtils;
-// Docxtemplater.Errors = require("./errors");
-// Docxtemplater.XmlTemplater = require("./xml-templater");
-// Docxtemplater.FileTypeConfig = require("./file-type-config");
-// Docxtemplater.XmlMatcher = require("./xml-matcher");
 
 export = Docxtemplater;
