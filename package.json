@@ -6,6 +6,9 @@
   "contributors": [
     {
       "name": "Edgar Hipp"
+    },
+    {
+      "name": "Jérôme Landieth"
     }
   ],
   "main": "js/docxtemplater.js",
@@ -17,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/open-xml-templating/docxtemplater"
+    "url": "https://github.com/Landeers/docxtemplater"
   },
   "dependencies": {
     "xmldom": "^0.1.27"
@@ -52,7 +55,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=0.10"
+    "node": ">=8.11.1"
   },
   "scripts": {
     "build": "rimraf build && mkdirp build && npm run browserify && npm run uglify",
@@ -69,7 +72,7 @@
     "convertto:es5": "rimraf js -rf && mkdirp js && npm run babel && cp es6/tests/*.xml js/tests ",
     "convertto:es5:watch": "npm run babel -- --watch",
     "test:coverage": "nyc --reporter=html --reporter=text mocha --  es6/tests/index.js",
-    "prettier": "prettier --list-different 'es6/**/!(filenames).js' '*.js'",
+    "prettier": "prettier --list-different 'es6/**/*.js' --debug-check",
     "prettier:fix": "prettier --write 'es6/**/!(filenames).js' '*.js'",
     "lint": "eslint_d . && ./check-casing.bash",
     "lint:fix": "eslint_d . --fix && ./check-casing.bash",
