@@ -8,7 +8,7 @@ declare interface XmlTemplater {
   getFullText(): string;
 }
 
-declare interface DocUtils {
+interface DocUtils {
   isContent();
   isParagraphStart();
   isParagraphEnd();
@@ -37,7 +37,7 @@ declare interface DocUtils {
 }
 
 declare namespace Docxtemplater {
-  DocUtils: DocUtils;
+  const DocUtils: DocUtils;
   // Docxtemplater.Errors = require("./errors");
   // Docxtemplater.XmlTemplater = require("./xml-templater");
   // Docxtemplater.FileTypeConfig = require("./file-type-config");
