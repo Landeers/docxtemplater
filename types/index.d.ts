@@ -1,5 +1,5 @@
-/* index.d.ts (C) 2015-present SheetJS and contributors */
-// TypeScript Version: 2.2
+// Type definition for Docxtemplater
+// TypeScript Version: 2.3
 import * as JSZip from 'jszip';
 
 declare interface InspectModule {}
@@ -37,7 +37,7 @@ declare interface DocUtils {
 }
 
 declare namespace Docxtemplater {
-  // Docxtemplater.DocUtils = DocUtils;
+  DocUtils: DocUtils;
   // Docxtemplater.Errors = require("./errors");
   // Docxtemplater.XmlTemplater = require("./xml-templater");
   // Docxtemplater.FileTypeConfig = require("./file-type-config");
