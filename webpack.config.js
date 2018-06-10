@@ -7,7 +7,7 @@ const outputFilename =
 
 const outputPath = path.resolve(
 	__dirname,
-	FILE === "test" ? "browser" : "build"
+	FILE === "test" ? "browser" : "dist"
 );
 const entry =
 	FILE === "test" ? "./es6/tests/index.js" : "./es6/docxtemplater.js";

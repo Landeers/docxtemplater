@@ -45,7 +45,6 @@ const Docxtemplater = class Docxtemplater {
 			module.prefix = prefix;
 		}
 		this.modules.push(moduleWrapper(module));
-		return this;
 	}
 	setOptions(options) {
 		if (options.delimiters) {
@@ -62,7 +61,6 @@ const Docxtemplater = class Docxtemplater {
 		if (this.zip) {
 			this.updateFileTypeConfig();
 		}
-		return this;
 	}
 	loadZip(zip) {
 		if (!zip.loadAsync) {
@@ -159,7 +157,6 @@ const Docxtemplater = class Docxtemplater {
 		this.fileTypeConfig =
 			this.options.fileTypeConfig ||
 			Docxtemplater.FileTypeConfig[this.fileType];
-		return this;
 	}
 	render() {
 		return this.compile().then(() => {
